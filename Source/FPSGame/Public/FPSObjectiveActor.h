@@ -6,21 +6,35 @@
 #include "GameFramework/Actor.h"
 #include "FPSObjectiveActor.generated.h"
 
+class USphereComponent;
+
 UCLASS()
 class FPSGAME_API AFPSObjectiveActor : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AFPSObjectiveActor();
 
 protected:
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+		UStaticMeshComponent* meshComp;
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+		USphereComponent* sphereComp;
+	UPROPERTY(EditDefaultsOnly, Category = "Effects")
+		UParticleSystem* PickupFX;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	void PlayEffects();
+
+public:
+
+	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+
 
 };
