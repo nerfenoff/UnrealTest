@@ -26,7 +26,7 @@ void AFPSAIGuard::OnPawnSeen(APawn * SeenPawn)
 	if (SeenPawn == nullptr)
 		return;
 
-	DrawDebugSphere(GetWorld(), SeenPawn->GetActorLocation(), 15.0f, 12, FColor::Red);
+	DrawDebugSphere(GetWorld(), SeenPawn->GetActorLocation(), 15.0f, 12, FColor::Red,false,10.f);
 }
 
 // Called every frame
