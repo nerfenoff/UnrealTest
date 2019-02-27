@@ -14,6 +14,7 @@ class USoundBase;
 class UAnimSequence;
 
 
+
 UCLASS()
 class AFPSCharacter : public ACharacter
 {
@@ -33,6 +34,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
 		UCameraComponent* CameraComponent;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI")
+	UPawnNoiseEmitterComponent* NoiseEmitterComponent;
 
 public:
 	AFPSCharacter();
