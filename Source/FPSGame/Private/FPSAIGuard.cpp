@@ -5,8 +5,6 @@
 #include "DrawDebugHelpers.h"
 #include "TimerManager.h"
 #include "FPSGameMode.h"
-//#include "AI/Navigation/NavigationSystem.h"
-//#include "NavigationSystem/Public/NavigationSystem.h"
 #include "Runtime/AIModule/Classes/Blueprint/AIBlueprintHelperLibrary.h"
 
 
@@ -140,8 +138,6 @@ void AFPSAIGuard::MoveToNextPatrolPoint()
 	}
 
 	UAIBlueprintHelperLibrary::SimpleMoveToActor(GetController(), CurrentPatrolPoint);
-	//UNavigationSystem::SimpleMoveToActor(GetController(),CurrentPatrolPoint);
-
 
 }
 
